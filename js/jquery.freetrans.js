@@ -1,7 +1,9 @@
 /**
-* jquery-freetrans.js v1.1
+* jquery-freetrans.js v1.1b
 *
 * Copyright (c) 2013 Jonathan Greene (gthmb)
+* 
+* Edited to add ability to mirror FT'd element.
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -697,6 +699,10 @@
                 if (data._p.prev.mat != tstr) {
                         _setTransform(el, tstr);
                         data._p.prev.mat = tstr;
+                }
+                
+                if(data.link) {
+                    data.link.style.cssText = sel.get(0).style.cssText;
                 }
         }
 })(jQuery);
